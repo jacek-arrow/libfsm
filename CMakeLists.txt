@@ -10,8 +10,8 @@ project(fsm
 #
 # options
 #
-option(BUILD_EXAMPLES "enable building of examples" OFF)
-option(FSM_INSTALL "Install the library (shared data might be installed anyway)" ${EVC_MAIN_PROJECT})
+option(BUILD_EXAMPLES "enable building of examples" ON)
+option(FSM_INSTALL "Install the library (shared data might be installed anyway)" ON)
 
 
 #
@@ -44,20 +44,13 @@ endif()
 #
 # installation definition
 #
-if (FSM_INSTALL)
-    install(
-        TARGETS fsm
-        EXPORT fsm-targets
-    )
+install(
+    TARGETS fsm
+    EXPORT fsm-targets
+)
 
-    install(
-        DIRECTORY include/
-        TYPE INCLUDE
-    )
-
-    evc_setup_package(
-        NAME fsm
-        EXPORT fsm-targets
-        NAMESPACE fsm
-    )
+install(
+    DIRECTORY include/
+    TYPE INCLUDE
+)
 endif()
