@@ -44,13 +44,14 @@ endif()
 #
 # installation definition
 #
-install(
-    TARGETS fsm
-    EXPORT fsm-targets
-)
+if (FSM_INSTALL)
+    install(
+        TARGETS fsm
+        EXPORT fsm-targets
+    )
 
-install(
-    DIRECTORY include/
-    TYPE INCLUDE
-)
+    install(
+        DIRECTORY include/
+        TYPE INCLUDE
+    )
 endif()
