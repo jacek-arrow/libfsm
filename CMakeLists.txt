@@ -7,10 +7,6 @@ project(fsm
 	LANGUAGES CXX
 )
 
-find_package(everest-cmake 0.1 REQUIRED
-    PATHS ../everest-cmake
-)
-
 #
 # options
 #
