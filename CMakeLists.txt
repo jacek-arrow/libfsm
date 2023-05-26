@@ -5,10 +5,6 @@ project(fsm VERSION 0.1
 		LANGUAGES CXX
 )
 
-find_package(everest-cmake 0.1 REQUIRED
-    PATHS ../everest-cmake
-)
-
 option(BUILD_EXAMPLES "enable building of examples" OFF)
 option(FSM_INSTALL "Install the library (shared data might be installed anyway)" ${EVC_MAIN_PROJECT})
 
@@ -36,9 +32,4 @@ if (FSM_INSTALL)
         TYPE INCLUDE
     )
 
-    evc_setup_package(
-        NAME fsm
-        EXPORT fsm-targets
-        NAMESPACE fsm
-    )
 endif()
